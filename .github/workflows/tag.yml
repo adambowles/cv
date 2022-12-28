@@ -1,0 +1,15 @@
+name: Bump version
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Bump version and push tag
+        uses: laputansoft/github-tag-action@v4
+        with:
+          github_token: ${{ env.github-token }}
+          tag: ${{ steps.package-version.outputs.version }}
