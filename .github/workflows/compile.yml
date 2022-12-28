@@ -33,9 +33,7 @@ jobs:
           body: ${{ steps.tag_version.outputs.changelog }}
       - name: Get Date
         id: get-date
-        run: |
-          echo "::set-output name=date::$(/bin/date -u "+%Y-%m-%d")"
-        shell: bash
+        run: echo "date=$(/bin/date -u '+%Y-%m-%d')" >> $GITHUB_OUTPUT
       - name: Upload PDF to release
         uses: actions/upload-release-asset@v1
         env:
