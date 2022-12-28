@@ -16,7 +16,7 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
-          name: Adam Bowles CV
+          name: PDF
           path: main.pdf
 
       - name: Bump version and push tag
@@ -34,7 +34,7 @@ jobs:
       - name: Get Date
         id: get-date
         run: |
-          echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
+          echo "::set-output name=date::$(/bin/date -u "+%Y-%m-%d")"
         shell: bash
       - name: Upload PDF to release
         uses: actions/upload-release-asset@v1
@@ -43,5 +43,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./main.pdf
-          asset_name: adam-bowles-cv-${{ steps.get-date.outputs.date }}.pdf
+          asset_name: Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf
           asset_content_type: application/pdf
