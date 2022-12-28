@@ -32,13 +32,13 @@ jobs:
           name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
       - name: wtf
-        run: ls ./bin
+        run: ls
       - name: Upload PDF to release
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bin/main.pdf
+          asset_path: ./main.pdf
           asset_name: adam-bowles-cv.pdf
           asset_content_type: application/pdf
