@@ -111,6 +111,13 @@
   }
 }
 
+% Entry for bio
+\newcommand{\resumeEntryBio}[1]{
+  \item[]\small{
+    {#1}
+  }
+}
+
 % Entry with title, subheading, date(s), and location
 \newcommand{\resumeEntryTSDL}[4]{
   \vspace{-1pt}\item[]
@@ -129,7 +136,7 @@
 }
 
 % Entry for special (skills)
-\newcommand{\resumeEntryS}[2]{
+\newcommand{\resumeEntryS}[1]{
   \item[]\small{
     \textbf{\color{primary}#1 }{ #2 \vspace{-6pt}}
   }
@@ -186,7 +193,7 @@
 \section{\faUser}{About}
 
   \resumeEntryStart
-    \resumeEntryS{I}{am an experienced avionics technician with a strong background in electronic systems and aircraft maintenance. Proficient in troubleshooting and repairing a variety of avionics equipment, including radios, navigation systems, and cockpit displays. Skilled in working with technical manuals and schematics to diagnose and resolve issues. A team player with excellent communication skills and a commitment to safety. Seeking a challenging position in the avionics field where I can utilize my skills and knowledge to make a positive contribution.}
+    \resumeEntryBio{An experienced avionics technician with a strong background in electronic systems and aircraft maintenance. Proficient in troubleshooting and repairing a variety of avionics equipment, including radios, navigation systems, and cockpit displays. Skilled in working with technical manuals and schematics to diagnose and resolve issues. A team player with excellent communication skills and a commitment to safety. Seeking a challenging position in the avionics field where I can utilize my skills and knowledge to make a positive contribution.}
  \resumeEntryEnd
 
 %-------------------------------------------------- EDUCATION --------------------------------------------------
