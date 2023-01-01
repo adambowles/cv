@@ -26,7 +26,7 @@ jobs:
         run: echo "date=$(/bin/date -u '+%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Rename file
-        run: ls && mv main.pdf "Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf" && ls
+        run: mv main.pdf "Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf"
 
       - name: Bump version and push tag
         id: tag_version
@@ -43,7 +43,7 @@ jobs:
           body: ${{ steps.tag_version.outputs.changelog }}
 
       - name: Upload PDF to release
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v2 # This uses deprecated `set-output` and Node 12, consider `termux/upload-release-action` instead
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./*.pdf
