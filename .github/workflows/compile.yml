@@ -48,4 +48,4 @@ jobs:
           token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           files: "*.pdf"
-          asset_name: Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
