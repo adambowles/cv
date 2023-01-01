@@ -46,6 +46,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: main.pdf
+          run: ls
+          file: ./main.pdf
           tag: ${{ github.ref }}
           asset_name: Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf
