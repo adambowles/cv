@@ -27,7 +27,6 @@ jobs:
 
       - name: Rename file
         run: ls && mv main.pdf "Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf" && ls
-#         run: ls
 
       - name: Bump version and push tag
         id: tag_version
@@ -49,5 +48,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./*.pdf
           file_glob: true
-          tag: ${{ github.ref }}
-#           asset_name: Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf
+          tag: ${{ steps.tag_version.outputs.new_tag }}
