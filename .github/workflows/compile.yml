@@ -25,8 +25,8 @@ jobs:
         id: get-date
         run: echo "date=$(/bin/date -u '+%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      - name: Rename file
-        run: mv main.pdf "Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf"
+#       - name: Rename file
+#         run: mv main.pdf "Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf"
 
       - name: Bump version and push tag
         id: tag_version
@@ -34,15 +34,18 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-#       - name: Create a GitHub release
-#         uses: ncipollo/release-action@v1
-#         id: create_release
-#         with:
-#           tag: ${{ steps.tag_version.outputs.new_tag }}
-#           name: Release ${{ steps.tag_version.outputs.new_tag }}
-#           body: ${{ steps.tag_version.outputs.changelog }}
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        id: create_release
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
 
       - name: Upload PDF to release
-        uses: softprops/action-gh-release@v1
+        uses: svenstaro/upload-release-action@v2
         with:
-          files: "*.pdf"
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: main.pdf
+          tag: ${{ github.ref }}
+          asset_name: Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf
