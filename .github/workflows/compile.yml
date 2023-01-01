@@ -25,8 +25,9 @@ jobs:
         id: get-date
         run: echo "date=$(/bin/date -u '+%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-#       - name: Rename file
-#         run: mv main.pdf "Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf"
+      - name: Rename file
+        run: ls && mv main.pdf "Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf" && ls
+#         run: ls
 
       - name: Bump version and push tag
         id: tag_version
@@ -46,7 +47,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          run: ls
-          file: ./main.pdf
+          file: ./*.pdf
+          file_glob: true
           tag: ${{ github.ref }}
-          asset_name: Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf
+#           asset_name: Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf
