@@ -21,20 +21,6 @@ jobs:
           name: PDF
           path: main.pdf
 
-      - name: Bump version and push tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        id: create_release
-        with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: Release ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
-
       - name: Get Date
         id: get-date
         run: echo "date=$(/bin/date -u '+%Y-%m-%d')" >> $GITHUB_OUTPUT
@@ -42,10 +28,21 @@ jobs:
       - name: Rename file
         run: mv main.pdf "Adam Bowles CV ${{ steps.get-date.outputs.date }}.pdf"
 
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+#       - name: Create a GitHub release
+#         uses: ncipollo/release-action@v1
+#         id: create_release
+#         with:
+#           tag: ${{ steps.tag_version.outputs.new_tag }}
+#           name: Release ${{ steps.tag_version.outputs.new_tag }}
+#           body: ${{ steps.tag_version.outputs.changelog }}
+
       - name: Upload PDF to release
         uses: softprops/action-gh-release@v1
         with:
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
           files: "*.pdf"
-          tag_name: ${{ steps.tag_version.outputs.new_tag }}
