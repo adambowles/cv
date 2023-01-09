@@ -43,7 +43,7 @@ jobs:
           body: ${{ steps.tag_version.outputs.changelog }}
 
       - name: Upload PDF to release
-        uses: svenstaro/upload-release-action@master # This uses deprecated `set-output` and Node 12, consider `termux/upload-release-action` instead
+        uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./*.pdf
