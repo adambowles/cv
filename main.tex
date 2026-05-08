@@ -35,6 +35,9 @@
 \def \phoneicon {\faPhone}
 \def \phonetext {+44 (0) 7584 356713}
 
+\def \addressicon {\faHome}
+\def \addresstext {108 Woodide View, Suffolk, IP31 1LX}
+
 \def \emailicon {\faEnvelope}
 \def \emaillink {mailto:cv@adambowl.es}
 \def \emailtext {cv@adambowl.es}
@@ -65,6 +68,7 @@
 % Defines to make listing easier
 \def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
 \def \phone {\phoneicon \hspace{3pt}{ \phonetext}}
+\def \address {\addressicon \hspace{3pt}{ \addresstext}}
 \def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
 \def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
 \def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
@@ -186,27 +190,15 @@
 
 %---------------------------------------------------- HEADER ----------------------------------------------------
 
-\headertype{\linkedin}{\github}{\website}{\phone}{\email}{} % Set the order of items here
+\headertype{\linkedin}{\github}{\website}{\phone}{\address}{\email} % Set the order of items here
 \vspace{-10pt} % Set a negative value to push the body up, and the opposite
 
 %-------------------------------------------------- ABOUT --------------------------------------------------
 \section{\faUser}{About}
 
   \resumeEntryStart
-    \resumeEntryBio{Avionics technician with extensive expertise in electronic systems and aircraft maintenance, specializing in the troubleshooting and repair of complex avionics equipment, including radios, navigation systems, and cockpit displays. Known for a detail-oriented approach to diagnostics and a deep understanding of technical manuals and schematics, ensuring accurate and efficient issue resolution. Recognized as a collaborative team player with strong communication skills and an unwavering commitment to safety. Eager to leverage proven technical skills and a dedication to excellence in a challenging avionics role that drives operational readiness and safety}
+    \resumeEntryBio{Experienced and detail-oriented Avionics Technician with expertise in aircraft maintenance, fault diagnosis and repair of complex avionics systems, including communications, navigation and cockpit display equipment. Proven experience operating within Maintenance, Repair and Overhaul (MRO) environments under UK Military Aviation Authority (MAA) MRP Part 145 regulations, ensuring compliance with airworthiness, safety and technical standards. Experienced in exercising 2nd signature responsibilities and ensuring maintenance activities meet regulatory and quality requirements prior to release to service. Skilled in interpreting technical publications and schematics to deliver accurate troubleshooting and rectification. Reliable team player committed to operational readiness, continuous improvement and a strong safety culture.}
  \resumeEntryEnd
-
-%-------------------------------------------------- EDUCATION --------------------------------------------------
-\section{\faGraduationCap}{Education}
-
-  \resumeEntryStart
-    \resumeEntryTSDL
-      {Open University}{Ongoing}
-      {BEng Engineering}{}
-    \resumeEntryTSDL
-      {Aston University}{2015}
-      {BSc Computer Science}{}
-  \resumeEntryEnd
 
 %-------------------------------------------------- EXPERIENCE --------------------------------------------------
 \section{\faWrench}{Experience}
@@ -214,49 +206,44 @@
   \resumeEntryStart
     \resumeEntryTSDL
       {British Army}{Feb 2020 -- Present}
-      {Avionics Technician}{Suffolk, UK}
+      {Avionics Supervisor, Senior Avionics Technician}{Suffolk, UK}
     \resumeItemListStart
-      \resumeItem {Installed, maintained, and repaired avionics systems on Apache AH-64D and AH-64E models}
-      \resumeItem {Conducted functional tests on avionics systems to ensure proper operation}
-      \resumeItem {Performed routine maintenance and troubleshooting on avionics systems}
-      \resumeItem {Participated in aircraft safety inspections and helped to identify and resolve avionics issues}
-      \resumeItem {Provided technical support and guidance to team members and other technicians}
+      \resumeItem {Supervise and lead a team of aircraft technicians within an MRO environment, ensuring all maintenance activities are completed safely, efficiently and in line with regulatory requirements}
+      \resumeItem {Exercise 2nd signature responsibilities (independent inspection) under MAA MRP Part 145, certifying maintenance tasks and ensuring compliance prior to release}
+      \resumeItem {Plan, sequence and allocate maintenance tasks, ensuring optimal workflow and on-time aircraft delivery}
+      \resumeItem {Perform and oversee assembly, disassembly, modification and upgrade of avionics systems and aircraft components}
+      \resumeItem {Conduct advanced troubleshooting and fault diagnosis on complex aircraft systems}
+      \resumeItem {Provide technical guidance, mentoring and on-the-job training to technicians, apprentices and trainees}
+      \resumeItem {Maintain 100\% oversight of trainee/apprentice work, ensuring adherence to standards and safe working practices}
+      \resumeItem {Enforce strict compliance with Human Factors, FOD prevention, tool control, COSHH and health \& safety regulations}
+      \resumeItem {Exercise authority to halt unsafe work (“stop work”), mitigating risks and escalating issues as required}
+      \resumeItem {Support continuous improvement initiatives, contributing to workshops and process optimisation activities}
+      \resumeItem {Ensure accurate and timely completion of maintenance documentation and reporting}
+      \resumeItem {Demonstrate flexibility to support operational requirements across locations and shift
+patterns}
     \resumeItemListEnd
   \resumeEntryEnd
+
+%-------------------------------------------------- SKILLS --------------------------------------------------
+\section{\faGears}{Skills}
+ \resumeEntryStart
+  \resumeEntryS{Key skills} {MAA MRP Part 145 Compliance \& Airworthiness · 2nd Signature / Independent Inspection Authorisation · Aircraft Avionics Maintenance \& Fault Diagnosis · Team Leadership, Supervision \& Mentoring · Work Planning, Task Allocation \& Sequencing · Risk Management \& ‘Stop Work’ Authority · Human Factors, FOD \& Tool Control · Continuous Improvement \& Lean Practices · Technical Documentation \& Reporting · Microsoft Office Suite}
+  \resumeEntryS{Platform experience} {AH-64 Mk1, AH-64E}
+  \resumeEntryS{Clearance} {SC}
+ \resumeEntryEnd
+
+%-------------------------------------------------- QUALIFICATIONS --------------------------------------------------
+ \section{\faGraduationCap}{Qualifications}
 
   \resumeEntryStart
     \resumeEntryTSDL
-      {Sipcentric Ltd.}{Jan 2016 -- Jan 2020}
-      {Software Engineer}{Birmingham, UK}
-    \resumeItemListStart
-      \resumeItem {Developed and maintained software applications using javascript and typescript in both front and back end contexts}
-      \resumeItem {Collaborated with cross-functional teams to design and implement new features and functionality}
-      \resumeItem {Performed code reviews and provided guidance to junior team members}
-      \resumeItem {Implemented automated testing and continuous integration processes to improve code quality and speed of deployment}
-      \resumeItem {Worked with colleagues to troubleshoot and debug production issues}
-      \resumeItem {Participated in agile software development methodologies, including daily stand-ups, sprint planning, and retrospectives}
-    \resumeItemListEnd
+      {EAL}{2024}
+      {Level 3 NVQ Extended Diploma in Aeronautical Engineering}{}
   \resumeEntryEnd
-
-  \resumeEntryStart
+    \resumeEntryStart
     \resumeEntryTSDL
-      {Roxel (UK Rocket Motors) Ltd.}{Jun 2013 -- Jan 2016}
-      {Business Analyst}{Kidderminster, UK}
-    \resumeItemListStart
-        \resumeItem {Analyzed business processes and pinpointed improvement areas, driving reduction in workflow inefficiencies through refined process documentation}
-        \resumeItem {Engaged with clients to define project scope and objectives, delivering solutions that aligned with strategic goals and boosted client satisfaction}
-        \resumeItem {Developed and maintained documentation, including business requirements and functional specifications}
-        \resumeItem {Participated in the design and testing of new systems and processes for managing nonconformity of production}
-        \resumeItem {Collaborated with cross-functional teams to ensure successful project delivery}
-        \resumeItem {Provided support to senior business analysts and project managers as needed}
-    \resumeItemListEnd
+      {Aston University}{2015}
+      {BSc Computer Science}{}
   \resumeEntryEnd
-
-%-------------------------------------------------- PROGRAMMING SKILLS --------------------------------------------------
-% \section{\faGears}{Skills}
-%  \resumeEntryStart
-%   \resumeEntryS{Traits } {Hardworking, Alpha Male, Jackhammer, Merciless, Insatiable}
-%   \resumeEntryS{Talents } {Karate (Black Belt), Jujitsu, Werewolf Hunting, Table Making}
-%  \resumeEntryEnd
 
 \end{document}
